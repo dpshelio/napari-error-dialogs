@@ -1,0 +1,48 @@
+name: napari-error-dialogs
+display_name: napari Errors Dialogs
+contributions:
+  commands:
+    - id: napari-error-dialogs.get_reader
+      python_name: napari_error_dialogs._reader:napari_get_reader
+      title: Open data with napari Errors Dialogs
+    - id: napari-error-dialogs.write_multiple
+      python_name: napari_error_dialogs._writer:write_multiple
+      title: Save multi-layer data with napari Errors Dialogs
+    - id: napari-error-dialogs.write_single_image
+      python_name: napari_error_dialogs._writer:write_single_image
+      title: Save image data with napari Errors Dialogs
+    - id: napari-error-dialogs.make_sample_data
+      python_name: napari_error_dialogs._sample_data:make_sample_data
+      title: Load sample data from napari Errors Dialogs 
+    - id: napari-error-dialogs.make_qwidget
+      python_name: napari_error_dialogs._widget:ExampleQWidget
+      title: Make example QWidget
+    - id: napari-error-dialogs.make_magic_widget
+      python_name: napari_error_dialogs._widget:example_magic_widget
+      title: Make example magic widget
+    - id: napari-error-dialogs.make_func_widget
+      python_name: napari_error_dialogs._widget:example_function_widget
+      title: Make example function widget 
+  readers:
+    - command: napari-error-dialogs.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy'] 
+  writers:
+    - command: napari-error-dialogs.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: napari-error-dialogs.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy'] 
+  sample_data:
+    - command: napari-error-dialogs.make_sample_data
+      display_name: napari Errors Dialogs
+      key: unique_id.1 
+  widgets:
+    - command: napari-error-dialogs.make_qwidget
+      display_name: Example QWidget
+    - command: napari-error-dialogs.make_magic_widget
+      display_name: Example Magic Widget
+    - command: napari-error-dialogs.make_func_widget
+      autogenerate: true
+      display_name: Example Function Widget 
